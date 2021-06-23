@@ -30,7 +30,6 @@
                     <p class="form_input-error">Code Student is just a numeric value With a minimum of 5 digits</p>
                 </div>
                 {{-- Group: name --}}
-                {{-- Group: name2222 --}}
                 <div class="form_group" id="group_name">
                     <label for="name" class="form_label">Code Student</label>
                     <div class="form_group-input">
