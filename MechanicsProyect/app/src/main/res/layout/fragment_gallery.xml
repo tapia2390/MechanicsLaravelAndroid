@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/side_nav_bar">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="20sp"
+        android:id="@+id/mRlView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10sp" />
+
+            <ImageView
+                android:id="@+id/camara1"
+                android:layout_width="90sp"
+                android:layout_height="90sp"
+                android:layout_below="@+id/textView5"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:src="@drawable/mechanic_usr"
+                android:onClick="camara1" />
+
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10sp" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15sp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40sp"
+                        android:orientation="horizontal"
+                       >
+
+
+                        <EditText
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/txt_nombre"
+                            android:hint="Pedro"
+                            android:inputType="textAutoCorrect"
+                            android:layout_centerHorizontal="true"
+                            android:paddingLeft="5sp"
+                            android:textStyle="normal"
+                            android:textColorHint="@color/black"
+                            android:focusableInTouchMode="true"
+                            android:fontFamily="sans-serif"
+                            android:background="@drawable/blanco_post_border_style"
+                            />
+
+                    </LinearLayout>
+
+
+
+
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10sp" />
+
+
+
+                    <LinearLayout
+                        android:id="@+id/layut1"
+                        android:layout_width="match_parent"
+                        android:layout_height="40sp"
+                        android:orientation="horizontal"
+                       >
+
+                        <EditText
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/txt_apellido"
+                            android:hint="Picapiedra"
+                            android:inputType="textAutoCorrect"
+                            android:layout_centerHorizontal="true"
+                           
+                            android:paddingLeft="5sp"
+                            android:textStyle="normal"
+                            android:textColorHint="@color/black"
+                            android:focusableInTouchMode="true"
+                            android:fontFamily="sans-serif"
+                            android:background="@drawable/blanco_post_border_style"
+                            />
+
+                    </LinearLayout>
+
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40sp"
+                        android:orientation="horizontal"
+                       
+                        android:id="@+id/layut2">
+
+
+                        <EditText
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/txt_celular"
+                            android:hint="310429939"
+                            android:inputType="phone"
+                            android:layout_centerHorizontal="true"
+                           
+                            android:paddingLeft="5sp"
+                            android:textStyle="normal"
+                            android:textColorHint="@color/black"
+                            android:focusableInTouchMode="true"
+                            android:fontFamily="sans-serif"
+                            android:background="@drawable/blanco_post_border_style"
+                            />
+
+                    </LinearLayout>
+
+                    <Space
+                        android:id="@+id/space1"
+                        android:layout_width="match_parent"
+                        android:layout_height="10sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40sp"
+                        android:orientation="horizontal"
+                       >
+
+
+                        <EditText
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/txt_correo"
+                            android:hint="pedro@gmail.com"
+                            android:inputType="textEmailAddress"
+                            android:layout_centerHorizontal="true"
+                            android:paddingLeft="5sp"
+                            android:textStyle="normal"
+                            android:editable="false"
+                            android:focusable="false"
+                            android:textColorHint="@color/black"
+                            android:focusableInTouchMode="true"
+                            android:fontFamily="sans-serif"
+                            android:background="@drawable/blanco_post_border_style"
+                            />
+
+                    </LinearLayout>
+
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10sp" />
+
+
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="20sp" />
+
+
+                    <Button
+                        android:id="@+id/btnupdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="40sp"
+                        android:layout_alignParentBottom="true"
+                       
+                        android:onClick="validar"
+                        android:text="Actualizar"
+                        android:textStyle="bold" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10sp" />
+
+
+                    <Button
+                        android:id="@+id/btncerrar"
+                        android:layout_width="match_parent"
+                        android:layout_height="40sp"
+                        android:layout_alignParentBottom="true"
+                        android:text="cerrar sesion"
+                        android:textStyle="bold"
+                        />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
