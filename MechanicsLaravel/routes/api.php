@@ -19,3 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('mechanics', MechanicApiController::class);
+
+Route::apiResource('servicelist', ServiceListApiController::class);
