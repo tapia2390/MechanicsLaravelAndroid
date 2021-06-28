@@ -22,3 +22,14 @@ Route::get('/testdb', 'HomeController@testDBConnection');
 
 // Route for Mechanics resource type controller
 Route::resource('/mechanics', 'MechanicController');
+
+
+Route::get('/menu', function () {
+    return view('menu.index');
+});
+
+
+
+Route::get('/mercadoPago', function () {
+    return view('mercadoPago.index');
+});
