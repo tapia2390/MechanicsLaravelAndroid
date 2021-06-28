@@ -323,6 +323,10 @@ height: 100%;
             
             link mercado pago
             https://www.mercadopago.com.co/developers/es/guides/online-payments/checkout-api/receiving-payment-by-card
+            
+            
+            https://www.youtube.com/watch?v=7cy5GNWpnvA
+            
             --->
   </body>
     </html>
