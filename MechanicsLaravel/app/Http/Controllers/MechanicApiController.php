@@ -46,6 +46,8 @@ class MechanicApiController extends Controller
 
            )"
         );
+
+        return redirect()->route('mechanic.show');
         //return $request->all();
     }
 

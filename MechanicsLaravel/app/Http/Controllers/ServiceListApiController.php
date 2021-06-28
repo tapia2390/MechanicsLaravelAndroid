@@ -39,6 +39,8 @@ class ServiceListApiController extends Controller
                 '$request->servicescheduling_id'
             )"
         );
+
+        return redirect()->route('servicelist.show');
     }
 
     /**
