@@ -293,7 +293,7 @@ input[type=text]:placeholder {
         <div class="wrapper fadeInDown">
   <div id="formContent">
     <!-- Tabs Titles -->
-    <h2 class="active"> Sign In </h2>
+    <h2 class="active"> Login </h2>
 
     <!-- Icon -->
     <div class="fadeIn first">
@@ -307,10 +307,7 @@ input[type=text]:placeholder {
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
 
-    <!-- Remind Passowrd -->
-    <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
-    </div>
+  
 
   </div>
 </div>
