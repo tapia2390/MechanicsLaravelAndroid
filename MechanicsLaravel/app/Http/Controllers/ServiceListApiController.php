@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Servicelist;
+use DB;
 use Illuminate\Http\Request;
 
 class ServiceListApiController extends Controller
@@ -25,20 +26,21 @@ class ServiceListApiController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
-        /*
-    DB::insert(
-    "CALL sp_insr_servicelist
-    (
-    '$request->cost',
-    '$request->previewImageService',
-    '$request->statusService_id',
-    '$request->mechanic_id',
-    '$request->service_id',
-    '$request->servicescheduling_id'
-    )"
-    );
-     */
+        //dd($request);
+
+        DB::insert(
+            "CALL sp_insr_servicelist
+            (
+                '$request->cost',
+                '$request->previewImageService',
+                '$request->statusService_id',
+                '$request->mechanic_id',
+                '$request->service_id',
+                '$request->servicescheduling_id'
+            )"
+        );
+
+        return redirect()->route('servicelist.show');
     }
 
     /**
@@ -47,9 +49,10 @@ class ServiceListApiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Servicelist $servicelist)
     {
-        //
+        //$servicelist = Servicelist::findOrFail($id);
+        return $servicelist;
     }
 
     /**
@@ -59,9 +62,14 @@ class ServiceListApiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Servicelist $servicelist)
     {
-        //
+        $servicelist->update($request->all());
+
+        return response()->json([
+            'status' => true,
+            'messages' => 'Succesdfully updated resource',
+        ]);
     }
 
     /**
@@ -70,8 +78,11 @@ class ServiceListApiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Servicelist $servicelist)
     {
-        //
+        $servicelist->delete();
+
+        return response()->json(['status' => 'Delete resource']);
+
     }
 }

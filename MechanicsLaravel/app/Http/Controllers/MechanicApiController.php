@@ -46,6 +46,8 @@ class MechanicApiController extends Controller
 
            )"
         );
+
+        return redirect()->route('mechanic.show');
         //return $request->all();
     }
 
@@ -55,9 +57,10 @@ class MechanicApiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Mechanic $mechanic)
     {
-        //
+        //$mechanic = Mechanic::findOrFail($id);
+        return $mechanic;
     }
 
     /**
@@ -67,9 +70,14 @@ class MechanicApiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Mechanic $mechanic)
     {
-        //
+        $mechanic->update($request->all());
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Successfully update resource',
+        ]);
     }
 
     /**
@@ -78,8 +86,10 @@ class MechanicApiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Mechanic $mechanic)
     {
-        //
+        $mechanic->delete();
+
+        return response()->json(['status' => 'Delete Resource']);
     }
 }
