@@ -121,9 +121,10 @@ color:#fff;
 background-color:#5fa2db;
 }
 .area {
-float: left;
-background: #e2e2e2;
+    margin:auto;
+background: #fff;
 width: 100%;
+
 height: 100%;
 }
 @font-face {
@@ -140,7 +141,129 @@ height: 100%;
   <body>
   <div class="area">
 
-  <p>Holasdsadasdasdasdasdasd</p>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    
+    <script type="text/javascript">
+
+
+
+
+        var markers = [
+    {
+        "title": 'Aksa Beach',
+        "lat": '19.1759668',
+        "lng": '72.79504659999998',
+        "description": 'Aksa Beach is a popular beach and a vacation spot in Aksa village at Malad, Mumbai.'
+    },
+    {
+        "title": 'Juhu Beach',
+        "lat": '19.0883595',
+        "lng": '72.82652380000002',
+        "description": 'Juhu Beach is one of favourite tourist attractions situated in Mumbai.'
+    },
+    {
+        "title": 'Girgaum Beach',
+        "lat": '18.9542149',
+        "lng": '72.81203529999993',
+        "description": 'Girgaum Beach commonly known as just Chaupati is one of the most famous public beaches in Mumbai.'
+    },
+    {
+        "title": 'Jijamata Udyan',
+        "lat": '18.979006',
+        "lng": '72.83388300000001',
+        "description": 'Jijamata Udyan is situated near Byculla station is famous as Mumbai (Bombay) Zoo.'
+    },
+    {
+        "title": 'Sanjay Gandhi National Park',
+        "lat": '19.2147067',
+        "lng": '72.91062020000004',
+        "description": 'Sanjay Gandhi National Park is a large protected area in the northern part of Mumbai city.'
+    }
+    ];
+        window.onload = function () {
+            LoadMap();
+        }
+        function LoadMap() {
+
+
+            $.getJSON( "http://10.0.0.8:8000/api/mechanics", function( json ) {
+                var content  = JSON.parse(JSON.stringify(json));
+    //console.log(content[0])
+
+
+    var mapOptions = {
+                center: new google.maps.LatLng( parseFloat(content[0].latitude),  parseFloat(content[0].longitude)),
+                zoom:15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var infoWindow = new google.maps.InfoWindow();
+            var latlngbounds = new google.maps.LatLngBounds();
+            var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+
+    for (let x in content) {
+  
+  console.log(content[x].latitude+ "" + content[x].longitude);
+
+  //var data = content[i]
+                var myLatlng = new google.maps.LatLng( parseFloat(content[x].latitude),  parseFloat(content[x].longitude));
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    title: content[x].name
+                });
+                (function (marker, content) {
+                    google.maps.event.addListener(marker, "click", function (e) {
+                        console.log("Tel: " +content.phone);
+                        infoWindow.setContent("<div style = 'width:200px;min-height:40px'> <p> Name: " + content.name + " "+content.surname+"</p> <p>Email: " + content.email + "</p> <p>Phone: " + content.phone + "</p></div>");
+                        infoWindow.open(map, marker);
+                    });
+                })(marker, content[x]);
+                latlngbounds.extend(marker.position);
+}
+            
+ });
+
+
+
+           
+         /*  var mapOptions = {
+                center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
+                zoom: 8,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var infoWindow = new google.maps.InfoWindow();
+            var latlngbounds = new google.maps.LatLngBounds();
+            var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+
+ 
+
+            for (var i = 0; i < markers.length; i++) {
+                var data = content[i]
+                var myLatlng = new google.maps.LatLng(data.latitude, data.longitude);
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    title: data.name
+                });
+                (function (marker, data) {
+                    google.maps.event.addListener(marker, "click", function (e) {
+                        infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + data.phone + "</div>");
+                        infoWindow.open(map, marker);
+                    });
+                })(marker, data);
+                latlngbounds.extend(marker.position);
+            }
+            var bounds = new google.maps.LatLngBounds();
+            map.setCenter(latlngbounds.getCenter());
+            map.fitBounds(latlngbounds);*/
+        }
+    </script>
+    <div id="dvMap" style="width: 100%; height: 100%">
+    </div>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJppjTdU4P2t9qs-tW-VCdd6GJcJqr-NA">
+</script>
   </div>
   
   
