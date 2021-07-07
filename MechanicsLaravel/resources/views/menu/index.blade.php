@@ -134,6 +134,10 @@ height: 100%;
   src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
 }
 
+body{
+    margin:0;
+padding:0;  
+}
   
   </style>
  
@@ -224,39 +228,6 @@ height: 100%;
             
  });
 
-
-
-           
-         /*  var mapOptions = {
-                center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
-                zoom: 8,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            var infoWindow = new google.maps.InfoWindow();
-            var latlngbounds = new google.maps.LatLngBounds();
-            var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
-
- 
-
-            for (var i = 0; i < markers.length; i++) {
-                var data = content[i]
-                var myLatlng = new google.maps.LatLng(data.latitude, data.longitude);
-                var marker = new google.maps.Marker({
-                    position: myLatlng,
-                    map: map,
-                    title: data.name
-                });
-                (function (marker, data) {
-                    google.maps.event.addListener(marker, "click", function (e) {
-                        infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + data.phone + "</div>");
-                        infoWindow.open(map, marker);
-                    });
-                })(marker, data);
-                latlngbounds.extend(marker.position);
-            }
-            var bounds = new google.maps.LatLngBounds();
-            map.setCenter(latlngbounds.getCenter());
-            map.fitBounds(latlngbounds);*/
         }
     </script>
     <div id="dvMap" style="width: 100%; height: 100%">
@@ -280,71 +251,14 @@ height: 100%;
                 </li>
                 <li class="has-subnav">
                     <a href="#">
-                        <i class="fa fa-laptop fa-2x"></i>
+                    <i class="fas fa-user-ninja  fa-2x"></i>
                         <span class="nav-text">
-                            Stars Components
+                            Profile
                         </span>
                     </a>
                     
                 </li>
-                <li class="has-subnav">
-                    <a href="#">
-                       <i class="fa fa-list fa-2x"></i>
-                        <span class="nav-text">
-                            Forms
-                        </span>
-                    </a>
-                    
-                </li>
-                <li class="has-subnav">
-                    <a href="#">
-                       <i class="fa fa-folder-open fa-2x"></i>
-                        <span class="nav-text">
-                            Pages
-                        </span>
-                    </a>
-                   
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-bar-chart-o fa-2x"></i>
-                        <span class="nav-text">
-                            Graphs and Statistics
-                        </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-font fa-2x"></i>
-                        <span class="nav-text">
-                           Quotes
-                        </span>
-                    </a>
-                </li>
-                <li>
-                   <a href="#">
-                       <i class="fa fa-table fa-2x"></i>
-                        <span class="nav-text">
-                            Tables
-                        </span>
-                    </a>
-                </li>
-                <li>
-                   <a href="#">
-                        <i class="fa fa-map-marker fa-2x"></i>
-                        <span class="nav-text">
-                            Maps
-                        </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                       <i class="fa fa-info fa-2x"></i>
-                        <span class="nav-text">
-                            Documentation
-                        </span>
-                    </a>
-                </li>
+               
             </ul>
 
             <ul class="logout">
