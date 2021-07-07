@@ -33,3 +33,7 @@ Route::get('/menu', function () {
 Route::get('/mercadoPago', function () {
     return view('mercadoPago.index');
 });
+
+Route::get('/profile', function () {
+    return view('profile.index');
+});

@@ -241,7 +241,7 @@ padding:0;
   <nav class="main-menu">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="http://10.0.0.8:8000/menu">
                         <i class="fa fa-home fa-2x"></i>
                         <span class="nav-text">
                             Dashboard
@@ -250,10 +250,20 @@ padding:0;
                   
                 </li>
                 <li class="has-subnav">
-                    <a href="#">
-                    <i class="fas fa-user-ninja  fa-2x"></i>
+                    <a href="http://10.0.0.8:8000/profile">
+                    <i class="fa fa-home fa-2x"></i>
                         <span class="nav-text">
                             Profile
+                        </span>
+                    </a>
+                    
+                </li>
+
+                <li class="has-subnav">
+                    <a href="http://10.0.0.8:8000/mercadoPago">
+                    <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                        Payments
                         </span>
                     </a>
                     
