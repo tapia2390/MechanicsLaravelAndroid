@@ -1,8 +1,12 @@
 package com.example.mechanicsproyect;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Toast;
+
+import com.example.mechanicsproyect.modelo.MercadoPago;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import androidx.navigation.NavController;
@@ -29,8 +33,13 @@ private ActivityMainBinding binding;
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+               /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();*/
+
+
+                Intent i = new Intent(getApplicationContext(), MercadoPago.class);
+                startActivity(i);
+                overridePendingTransition(R.anim.push_down_in, R.anim.push_down_out);
             }
         });
         DrawerLayout drawer = binding.drawerLayout;
@@ -59,4 +68,6 @@ private ActivityMainBinding binding;
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+
 }
