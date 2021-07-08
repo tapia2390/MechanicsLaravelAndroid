@@ -335,10 +335,10 @@ input[type=password]:placeholder {
     </div>
 
     <!-- Login Form -->
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+    <form >
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Email">
       <input type="password" id="password" class="fadeIn third" name="login" placeholder="password" >
-      <input type="submit" class="fadeIn fourth" value="Log In">
+      <input type="button" class="fadeIn fourth" value="Log In" onclick="window.location.href='http://10.0.0.8:8000/menu'">
     </form>
 
   
